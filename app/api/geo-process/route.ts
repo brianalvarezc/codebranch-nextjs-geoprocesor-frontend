@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
+import { env } from '@/src/config/envs.config';
 
 export async function POST(request: Request) {
   try {
     const { points } = await request.json();
-    // Cambia la URL por la de tu microservicio real
-    const microserviceUrl = 'http://127.0.0.1:3000/api/v1/interceptor';
+  // Obtiene la URL del microservicio desde la variable de entorno
+  const microserviceUrl = `${env.geoProcesorApiUrl}/${env.geoProcesorApiPath}` || 'http://127.0.0.1:3000/api/v1/interceptor';
     const res = await fetch(microserviceUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

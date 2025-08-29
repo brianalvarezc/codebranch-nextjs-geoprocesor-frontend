@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "dotenv": "^17.2.1",
+    "joi": "^18.0.1",
     "leaflet": "^1.9.4",
     "next": "15.5.2",
     "react": "19.0.0-rc.1",
